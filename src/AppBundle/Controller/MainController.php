@@ -11,4 +11,8 @@ class MainController extends Controller
     {
         return $this->render('login.html');
     }
+
+    public function homeAction() {
+        return $this->render('home.html.twig');
+    }
 }

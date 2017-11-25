@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get me there</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Xor the World">
+    <!-- Bootstrap core CSS-->
+    <link href="../public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="../public/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="../public/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="../public/css/sb-admin.css" rel="stylesheet">
+    <link href="../public/css/razvan.css" rel="stylesheet">
+
+</head>
+<body class="fixed-nav sticky-footer bg-dark sidenav-toggled" id="page-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="#">Take Me There - Safe Directions</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Home">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-home"></i>
+                    <span class="nav-link-text">Home</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" id="NavCharts" data-placement="right" title="Work">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-briefcase"></i>
+                    <span class="nav-link-text">Work</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" id="NavTables" data-placement="right" title="Recent destinations">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-male"></i>
+                    <span class="nav-link-text">Recent destinations</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav sidenav-toggler">
+            <li class="nav-item">
+                <a class="nav-link text-center" id="sidenavToggler">
+                    <i class="fa fa-fw fa-angle-left"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0 mr-lg-2">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Current Location">
+                    </div>
+                </form>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0 mr-lg-2">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Destination">
+                    </div>
+                </form>
+            </li>
+            <li class="nav-item">
+                <span class="input-group-btn">
+                <button class="btn btn-primary" type="button" id="searchBtn">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{#<div class="content-wrapper">#}
+    {#<div class="container-fluid">#}
+        {#<div class="row">#}
+            {#<div class="col-sm-12">#}
+                {#<div id="map"></div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+{#</div>#}
+
+<div id="map"></div>
+
+
+<script src="../public/home-js/map-styles.js"></script>
+<script src="../public/home-js/homejs.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSIe_6R1MEOrQViImPLVBiOtriepEB3M8&callback=initMap" async defer></script>
+<!-- Bootstrap core JavaScript-->
+<script src="../public/vendor/jquery/jquery.min.js"></script>
+<script src="../public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="../public/vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="../public/js/sb-admin/sb-admin.min.js"></script>
+
+<!-- Bootstrap core JavaScript-->
+
+<script src="../public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="../public/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+<script src="../public/vendor/angular/angular.min.js"></script>
+<script src="../public/vendor/angular/angular-route.js"></script>
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+</body>
+
+
+
+
+</html>
