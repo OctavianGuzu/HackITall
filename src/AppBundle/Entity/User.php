@@ -2,17 +2,15 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-use AppBundle\Validator as MyAssert;
-use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Security\Core\User\UserInterface;
+
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  * @ORM\Table(name="user")
  */
-class User
+class User implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id
@@ -22,102 +20,149 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(name="name", type="string")
      */
-    private $name;
+    private $username;
 
     /**
-     * @ORM\Column(type="string", unique=true)
-     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(name="pass", type="string")
      */
-    private $slug;
+    private $password;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(name="home", type="string")
      */
-    private $isScientist;
+    private $home;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Genus", mappedBy="scientists")
+     * @ORM\Column(name="work", type="string")
      */
-    private $generaStudied;
+    private $work;
 
     /**
-     * @return string
+     * @ORM\OneToMany(targetEntity="Search", mappedBy="user")
      */
-    public function getSlug()
-    {
-        return $this->slug;
-    }
+    private $mapSearches;
 
     /**
-     * @param string $slug
+     * @ORM\Column(name="is_active", type="boolean")
      */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-    }
-
-    /**
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param integer $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function getIsScientist()
-    {
-        return $this->isScientist;
-    }
-
-    /**
-     * @param boolean $isScientist
-     */
-    public function setIsScientist($isScientist)
-    {
-        $this->isScientist = $isScientist;
-    }
+    private $isActive;
 
     public function __construct()
     {
-        $this->generaStudied = new ArrayCollection();
+        $this->isActive = true;
+        // may not be needed, see section on salt below
+        // $this->salt = md5(uniqid('', true));
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function getSalt()
+    {
+        // you *may* need a real salt depending on your encoder
+        // see section on salt below
+        return null;
+    }
+
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    public function setName($name)
+    {
+        $this->username = $name;
+    }
+
+    public function setPassword($pass)
+    {
+        $this->password = $pass;
+    }
+
+    public function getRoles()
+    {
+        return array('ROLE_USER');
+    }
+
+    public function eraseCredentials()
+    {
+    }
+
+    /** @see \Serializable::serialize() */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt,
+        ));
+    }
+
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt
+            ) = unserialize($serialized);
+    }
+    /**
+     * @return mixed
+     */
+    public function getHome()
+    {
+        return $this->home;
     }
 
     /**
-     * @return ArrayCollection|Genus[]
+     * @param mixed $home
      */
-    public function getGeneraStudied()
+    public function setHome($home)
     {
-        return $this->generaStudied;
+        $this->home = $home;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getWork()
+    {
+        return $this->work;
+    }
+
+    /**
+     * @param mixed $work
+     */
+    public function setWork($work)
+    {
+        $this->work = $work;
+    }
+
+    /**
+     * @return Search[]
+     */
+    public function getMapSearches()
+    {
+        return $this->mapSearches;
+    }
+
+    /**
+     * @param Search $mapSearch
+     */
+    public function addMapSearches(Search $mapSearch)
+    {
+        $this->mapSearches[] = $mapSearch;
+    }
+
 
 
 }

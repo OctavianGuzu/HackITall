@@ -1,0 +1,29 @@
+/* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+
+@media all and (max-width: 992px)
+{
+    #map {
+        height: 100%;
+        /* height: auto;*/
+    }
+}
+@media all and (min-width: 992px)
+{
+    #map {
+        height: 100%;
+        margin-left: 55px;
+        /* height: auto;*/
+    }
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body.sticky-footer {
+    margin-bottom: 0px;
+}
+
