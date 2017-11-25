@@ -37,4 +37,8 @@ class MainController extends Controller
         return new Response("succes");
 
     }
+
+    public function homeAction() {
+        return $this->render('home.html.twig');
+    }
 }
