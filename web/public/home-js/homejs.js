@@ -7,14 +7,17 @@ function initMap() {
         //disableDefaultUI: false,
         styles: mapstyles
     });
-    
 
-    $('#searchBtn').on('click', function (event) {
-        calcRoute(
-            $('#currentLocation').val(),
-            $('#destination').val()
-        );
+    $(document).ready(function() {
+        $('#searchBtn').on('click', function (event) {
+            calcRoute(
+                $('#currentLocation').val(),
+                $('#destination').val()
+            );
+        });
     });
+
+
 
     directionsService = new google.maps.DirectionsService();
 
@@ -45,7 +48,7 @@ function initMap() {
         };
         directionsService.route(request, function(response, status) {
             // clear former polylines
-            console.log(response);
+           // console.log(response);
             for(var j in  polylines ) {
                 polylines[j].setMap(null);
             }
@@ -69,11 +72,113 @@ function initMap() {
                         // detect which route was clicked on
                         var index = polylines.indexOf(this);
                         highlightRoute(index);
+                        showRoutInfo(response, index, response.routes.length);
+
                     });
                 }
                 map.fitBounds(bounds);
             }
         });
+    }
+
+    function showRoutInfo(response, index, len) {
+        index = len - index - 1;
+        var leg = response.routes[index].legs[0];
+        var steps = leg.steps;
+        var firstStep = steps[0];
+        var key = 'a045dcacd44e41e994b51210f9289e5a';
+        var total_pollution = 0;
+        var count = 0;
+        console.log(response.routes[index].legs[0]);
+        var distance = response.routes[index].legs[0].distance.text;
+        var time = response.routes[index].legs[0].duration.text;
+        var first = true;
+        var air_qual = "";
+        var first_weather = true;
+        var general_weather = "";
+        var minTemp, maxTemp;
+        var recomandations = "";
+
+        //https://api.breezometer.com/baqi/?lat=40.7324296&lon=-73.9977264&key=YOUR_API_KEY
+        for(var i = 0; i < steps.length; i += 5) {
+            $.get(
+                "https://api.breezometer.com/baqi/",
+                {lat : steps[i].start_location.lat(), lon : steps[i].start_location.lng(), 'key': key},
+                function(data) {
+                    //console.log(data);
+                    if (data.breezometer_aqi) {
+                        total_pollution += parseInt(data.breezometer_aqi);
+                        count++;
+                    }
+
+                    if (i + 5 >= steps.length && first) {
+                        air_qual = data.breezometer_description;
+                        first = false;
+                        recomandations = data.random_recommendations.health;
+                    }
+                }
+            );
+
+            $.get("https://api.openweathermap.org/data/2.5/weather",
+                {lat : parseInt(steps[i].start_location.lat()), lon : parseInt(steps[i].start_location.lng()),
+                    appid: '38e05cc437436e995755d62cefa705b2'},
+                function(data) {
+                   // console.log(data.weather[0].description);
+                    if (first_weather) {
+                        first_weather = false;
+                        minTemp = parseInt(data.main.temp);
+                        maxTemp = parseInt(data.main.temp);
+                    } else {
+                        //console.log(data.main.temp);
+                        if (parseInt(data.main.temp) > maxTemp)
+                            maxTemp = parseInt(data.main.temp);
+                        if (parseInt(data.main.temp) < minTemp)
+                            minTemp = parseInt(data.main.temp);
+                    }
+
+                    if (i + 5 >= steps.length) {
+                        general_weather = data.weather[0].description;
+                    }
+
+                });
+        }
+        setTimeout(function() {
+           // console.log(total_pollution / count);
+
+            var avg_pollution = total_pollution / count;
+            console.log(distance);
+            $('#showDistance').text(distance);
+
+            console.log(time);
+            $('#showETA').text(time);
+
+            console.log(total_pollution / count);
+            $('#showAveragePollution').text(parseInt(total_pollution / count) + "/100");
+
+            console.log(air_qual);
+            $('#showAirQuality').text(air_qual);
+
+            console.log(general_weather);
+            $('#showGeneralWeather').text(general_weather);
+
+            console.log(parseInt(minTemp - 272.15));
+            $('#showMinTemp').text(parseInt(minTemp - 272.15));
+
+            console.log(parseInt(maxTemp - 272.15));
+            $('#showMaxTemp').text(parseInt(maxTemp - 272.15));
+
+            console.log(recomandations);
+            $('#showAdvice').text("Advice: " + recomandations +".");
+
+
+            $('#routeModal').modal('show');
+
+        }, 2 * 1000);
+
+
+
+
+
     }
 
     function highlightRoute(index) {
