@@ -27,3 +27,6 @@ body.sticky-footer {
     margin-bottom: 0px;
 }
 
+.clickable {
+    cursor:pointer
+}

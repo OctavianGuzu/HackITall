@@ -1,4 +1,5 @@
 function initMap() {
+    var historyEntries;
     var directionsService;
     var polylines = [];
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -9,15 +10,104 @@ function initMap() {
     });
 
     $(document).ready(function() {
+
         $('#searchBtn').on('click', function (event) {
             calcRoute(
                 $('#currentLocation').val(),
                 $('#destination').val()
             );
+            var postData = {
+                name : $('#destination').val()
+            };
+            $.ajax({
+                url: "/saveSearch-ajax",
+                type: "POST",
+                data: postData,
+                dataType: "json",
+                success: function (response) {
+                    console.log(response.result);
+                    /*if (response.result) {
+                        alert("Search saved");
+                    } else {
+                        alert("Failed to save search");
+                    }*/
+                }
+            });
         });
+
+        $('.clickable').on('click', function (event) {
+            var clickedEntry = $(this).attr('id');
+            var index = parseInt(clickedEntry.substr(3, 1));
+            $('#historyModal').modal('hide');
+            calcRoute($('#currentLocation').val(), historyEntries[index].name);
+        });
+
+        $('#goHome').on('click', function (e) {
+            $.ajax({
+                url: "/getHome-ajax",
+                type: "POST",
+                data: {},
+                dataType: "json",
+                success: function (response) {
+                    calcRoute($('#currentLocation').val(), response.home);
+                }
+            });
+        });
+
+        $('#goToWork').on('click', function (e) {
+            $.ajax({
+                url: "/getWork-ajax",
+                type: "POST",
+                data: {},
+                dataType: "json",
+                success: function (response) {
+                    calcRoute($('#currentLocation').val(), response.work);
+                }
+            });
+        });
+
+        $('#getHistory').on('click', function (e) {
+            $.ajax({
+                url: "/getHistory-ajax",
+                type: "POST",
+                data: {},
+                dataType: "json",
+                success: function (response) {
+                    var name = response.username;
+                    var saves = response.history;
+                    historyEntries = saves;
+                    var formattedDate;
+                    for(var j=0; j < saves.length; j++) {
+                        formattedDate = (saves[j].date_created.date).slice(0, -7);
+                        $('#row' + j).html("<td>" + saves[j].name + "</td>" + "<td></td>" + "<td class=\"text-right\"> " + formattedDate + "</td>")
+                        $('#tbody').append('<tr class="clickable" id="row' + (j + 1) + '"></tr>');
+                    }
+                    $('#showUser').html(name + "\'s search history");
+                    $('#historyModal').modal('show');
+                }
+            });
+        });
+
+        $('#NavFeedback').on('click', function (event) {
+            $('#feedbackModal').modal('show');
+        });
+
+        $('#buttonSendFeedback').on('click', function (event) {
+            $('#feedbackText').val("");
+            $('#feedbackModal').modal('hide');
+            $('#thankYouModal').modal('show');
+            setTimeout(function(){ $('#thankYouModal').modal('hide'); }, 2000);
+        });
+
+        $('#NavCallCenter').on('click', function (event) {
+            $('#callModal').modal('show');
+        });
+
+        $('#btnCloseFeed').on('click', function (event) {
+            $('#feedbackText').val("");
+        });
+
     });
-
-
 
     directionsService = new google.maps.DirectionsService();
 
@@ -48,7 +138,6 @@ function initMap() {
         };
         directionsService.route(request, function(response, status) {
             // clear former polylines
-           // console.log(response);
             for(var j in  polylines ) {
                 polylines[j].setMap(null);
             }
@@ -89,7 +178,6 @@ function initMap() {
         var key = 'a045dcacd44e41e994b51210f9289e5a';
         var total_pollution = 0;
         var count = 0;
-        console.log(response.routes[index].legs[0]);
         var distance = response.routes[index].legs[0].distance.text;
         var time = response.routes[index].legs[0].duration.text;
         var first = true;
@@ -105,7 +193,6 @@ function initMap() {
                 "https://api.breezometer.com/baqi/",
                 {lat : steps[i].start_location.lat(), lon : steps[i].start_location.lng(), 'key': key},
                 function(data) {
-                    //console.log(data);
                     if (data.breezometer_aqi) {
                         total_pollution += parseInt(data.breezometer_aqi);
                         count++;
@@ -123,13 +210,11 @@ function initMap() {
                 {lat : parseInt(steps[i].start_location.lat()), lon : parseInt(steps[i].start_location.lng()),
                     appid: '38e05cc437436e995755d62cefa705b2'},
                 function(data) {
-                   // console.log(data.weather[0].description);
                     if (first_weather) {
                         first_weather = false;
                         minTemp = parseInt(data.main.temp);
                         maxTemp = parseInt(data.main.temp);
                     } else {
-                        //console.log(data.main.temp);
                         if (parseInt(data.main.temp) > maxTemp)
                             maxTemp = parseInt(data.main.temp);
                         if (parseInt(data.main.temp) < minTemp)
@@ -143,7 +228,6 @@ function initMap() {
                 });
         }
         setTimeout(function() {
-           // console.log(total_pollution / count);
 
             var avg_pollution = total_pollution / count;
             console.log(distance);
@@ -174,11 +258,6 @@ function initMap() {
             $('#routeModal').modal('show');
 
         }, 2 * 1000);
-
-
-
-
-
     }
 
     function highlightRoute(index) {

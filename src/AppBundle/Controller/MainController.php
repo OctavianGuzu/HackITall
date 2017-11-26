@@ -2,6 +2,9 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Search;
+use AppBundle\Repository\SearchRepository;
+use Faker\Provider\DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\BrowserKit\Request;
 use Symfony\Component\Config\Definition\Exception\Exception;
@@ -66,6 +69,71 @@ class MainController extends Controller
         } else {
             return new JsonResponse(["result" => false]);
         }
+    }
+
+    /**
+     * @Route("/saveSearch-ajax", name="saveSearch-ajax")
+     */
+    public function saveSearchAjaxAction()
+    {
+        if(isset($_POST['name'])) {
+            try {
+                $search = new Search();
+                $search->setName($_POST['name']);
+                $search->setDateCreated(new \DateTime());
+                $search->setUser($this->get('security.token_storage')->getToken()->getUser());
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($search);
+                $em->flush();
+                return new JsonResponse(["result" => true]);
+            } catch (Exception $e) {
+                var_dump($e->getMessage());
+            }
+            return new JsonResponse(["result" => true]);
+        } else {
+            return new JsonResponse(["result" => false]);
+        }
+    }
+
+    /**
+     * @Route("/getHome-ajax", name="getHome-ajax")
+     */
+    public function getHomeAjaxAction()
+    {
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $home = $user->getHome();
+        return new JsonResponse(["home" => $home]);
+    }
+
+    /**
+     * @Route("/getWork-ajax", name="getWork-ajax")
+     */
+    public function getWorkAjaxAction()
+    {
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $work = $user->getWork();
+        return new JsonResponse(["work" => $work]);
+    }
+
+    /**
+     * @Route("/getHistory-ajax", name="getHistory-ajax")
+     */
+    public function getHistoryAjaxAction()
+    {
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $userId = $user->getId();
+        $repo = $this->getDoctrine()->getRepository('AppBundle:Search');
+        /** @var Search[] $history */
+        $history = $repo->findBy(["user" => $user]);
+        $result = [];
+        foreach ($history as $entry) {
+            $e = [];
+            $e['name'] =  $entry->getName();
+            $e['date_created'] =  $entry->getDateCreated();
+            $result[] = $e;
+        }
+
+        return new JsonResponse(["history" => $result, "username" => $user->getUsername()]);
     }
 
 }

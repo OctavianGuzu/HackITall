@@ -29,21 +29,33 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Home">
-                <a class="nav-link" href="#">
+                <a id="goHome" class="nav-link">
                     <i class="fa fa-fw fa-home"></i>
                     <span class="nav-link-text">Home</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" id="NavCharts" data-placement="right" title="Work">
-                <a class="nav-link" href="#">
+                <a id="goToWork" class="nav-link" href="#">
                     <i class="fa fa-fw fa-briefcase"></i>
                     <span class="nav-link-text">Work</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" id="NavTables" data-placement="right" title="Recent destinations">
-                <a class="nav-link" href="#">
+                <a id="getHistory" class="nav-link">
                     <i class="fa fa-fw fa-male"></i>
                     <span class="nav-link-text">Recent destinations</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" id="NavFeedback" data-placement="right" title="Give Feedback">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-star"></i>
+                    <span class="nav-link-text">Give Feedback</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" id="NavCallCenter" data-placement="right" title="Call Us">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-phone"></i>
+                    <span class="nav-link-text">Call Us</span>
                 </a>
             </li>
         </ul>
@@ -175,6 +187,93 @@
                 </div>
             </div>
         </div>
+
+<div class="modal fade" id="historyModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="showUser">$users Search History</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped" id="tblGrid">
+                    <thead id="tblHead">
+                        <tr>
+                            <th>Destination</th>
+                            <th> </th>
+                            <th class="text-right">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <tr class="clickable" id="row0"></tr>
+                        <tr class="clickable" id="row1"></tr>
+                        <tr class="clickable" id="row2"></tr>
+                        <tr class="clickable" id="row3"></tr>
+                        <tr class="clickable" id="row4"></tr>
+                        <tr class="clickable" id="row5"></tr>
+                        <tr class="clickable" id="row6"></tr>
+                        <tr class="clickable" id="row7"></tr>
+                        <tr class="clickable" id="row8"></tr>
+                        <tr class="clickable" id="row9"></tr>
+                        <tr class="clickable" id="row10"></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="feedbackModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Give Us Feedback</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <textarea rows="4" cols="50" id="feedbackText"> </textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="buttonSendFeedback" class="btn btn-primary">Send Feedback</button>
+                <button type="button" id="btnCloseFeed" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="thankYouModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" align="center">Thank you for your feedback!</h1>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="callModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" align="center">Call Us</h1>
+            </div>
+            <div class="modal-body">
+                <p>Tel Verde:</p>
+                <a href="tel:0800-800-800">0800 800 800</a>
+                <p></p>
+                <p>Mobile:</p>
+                <a href="tel:+40-31-360-5141">+40 31 360 5141</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script src="../public/home-js/map-styles.js"></script>
