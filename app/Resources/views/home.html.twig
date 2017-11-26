@@ -20,6 +20,7 @@
 </head>
 <body class="fixed-nav sticky-footer bg-dark sidenav-toggled" id="page-top">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a href="#" class="pull-left"><img src="https://i.imgur.com/94BA9Nq.png" height="28px" width="33px"></a>
     <a class="navbar-brand" href="#">Take Me There - Safe Directions</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -57,14 +58,14 @@
             <li class="nav-item">
                 <form class="form-inline my-2 my-lg-0 mr-lg-2">
                     <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Current Location">
+                        <input class="form-control" type="text" placeholder="Current Location" id="currentLocation">
                     </div>
                 </form>
             </li>
             <li class="nav-item">
                 <form class="form-inline my-2 my-lg-0 mr-lg-2">
                     <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Destination">
+                        <input class="form-control" type="text" placeholder="Destination" id="destination">
                     </div>
                 </form>
             </li>
@@ -105,11 +106,80 @@
 
 <div id="map"></div>
 
+<div class="modal fade" id="routeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Selected Route Details</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-4"><p>Distance</p></div>
+                    <div class="col-sm-8">
+                        <div style="float:right;font-weight: bold"><p id="showDistance">""</p></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4"><p>Estimated Time</p></div>
+                    <div class="col-sm-8">
+                        <div style="float:right;font-weight: bold"><p id="showETA">""</p></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4"><p>Average Pollution</p></div>
+                    <div class="col-sm-8">
+                        <div style="float:right;font-weight: bold"><p id="showAveragePollution">""</p></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4"><p>Air Quality</p></div>
+                    <div class="col-sm-8">
+                        <div style="float:right;font-weight: bold"><p id="showAirQuality"></p></div>
+                </div>
+            </div>
+
+            <div class="row">
+                            <div class="col-sm-4"><p>General Weather</p></div>
+                            <div class="col-sm-8">
+                                <div style="float:right;font-weight: bold"><p id="showGeneralWeather"></p></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4"><p>Min Temperature</p></div>
+                            <div class="col-sm-8">
+                                <div style="float:right;font-weight: bold"><p id="showMinTemp"></p></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4"><p>Max Temperature</p></div>
+                            <div class="col-sm-8">
+                                <div style="float:right;font-weight: bold"><p id="showMaxTemp">""</p></div>
+                            </div>
+                        </div>
+
+
+                        <p id="showAdvice">""</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <button id="MessageSendBtn" type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 <script src="../public/home-js/map-styles.js"></script>
-<script src="../public/home-js/homejs.js"></script>
-<script src="../public/home-js/logout.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSIe_6R1MEOrQViImPLVBiOtriepEB3M8&callback=initMap" async defer></script>
+
+
 <!-- Bootstrap core JavaScript-->
 <script src="../public/vendor/jquery/jquery.min.js"></script>
 <script src="../public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -129,6 +199,9 @@
 <script src="../public/vendor/angular/angular-route.js"></script>
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<script src="../public/home-js/homejs.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSIe_6R1MEOrQViImPLVBiOtriepEB3M8&callback=initMap" async defer></script>
 
 
 </body>
