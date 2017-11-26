@@ -39,12 +39,14 @@ function initMap() {
         if (start == "") {
             start = {lat: 44.444156, lng: 26.0539071};
         }
+        var mode = $('#sel_mode').val();
+
         var request = {
             origin: start,
             destination: end,
             provideRouteAlternatives: true,
             unitSystem: google.maps.UnitSystem.METRIC,
-            travelMode: google.maps.TravelMode['DRIVING']
+            travelMode: google.maps.TravelMode[mode]
         };
         directionsService.route(request, function(response, status) {
             // clear former polylines
