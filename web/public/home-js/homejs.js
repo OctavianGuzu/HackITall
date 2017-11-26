@@ -10,7 +10,6 @@ function initMap() {
     });
 
     $(document).ready(function() {
-
         $('#searchBtn').on('click', function (event) {
             calcRoute(
                 $('#currentLocation').val(),
@@ -129,12 +128,14 @@ function initMap() {
         if (start == "") {
             start = {lat: 44.444156, lng: 26.0539071};
         }
+        var mode = $('#sel_mode').val();
+
         var request = {
             origin: start,
             destination: end,
             provideRouteAlternatives: true,
             unitSystem: google.maps.UnitSystem.METRIC,
-            travelMode: google.maps.TravelMode['DRIVING']
+            travelMode: google.maps.TravelMode[mode]
         };
         directionsService.route(request, function(response, status) {
             // clear former polylines
@@ -175,7 +176,7 @@ function initMap() {
         var leg = response.routes[index].legs[0];
         var steps = leg.steps;
         var firstStep = steps[0];
-        var key = 'a045dcacd44e41e994b51210f9289e5a';
+        var key = '2e3ac1f2ece244628e1ed135851f4595';
         var total_pollution = 0;
         var count = 0;
         var distance = response.routes[index].legs[0].distance.text;
@@ -208,7 +209,7 @@ function initMap() {
 
             $.get("https://api.openweathermap.org/data/2.5/weather",
                 {lat : parseInt(steps[i].start_location.lat()), lon : parseInt(steps[i].start_location.lng()),
-                    appid: '38e05cc437436e995755d62cefa705b2'},
+                    appid: '78f28e6aa225bc4c0edb9bfcb5a6d4f6'},
                 function(data) {
                     if (first_weather) {
                         first_weather = false;
@@ -230,28 +231,28 @@ function initMap() {
         setTimeout(function() {
 
             var avg_pollution = total_pollution / count;
-            console.log(distance);
+           // console.log(distance);
             $('#showDistance').text(distance);
 
-            console.log(time);
+           // console.log(time);
             $('#showETA').text(time);
 
-            console.log(total_pollution / count);
+           // console.log(total_pollution / count);
             $('#showAveragePollution').text(parseInt(total_pollution / count) + "/100");
 
-            console.log(air_qual);
+            //console.log(air_qual);
             $('#showAirQuality').text(air_qual);
 
-            console.log(general_weather);
+           // console.log(general_weather);
             $('#showGeneralWeather').text(general_weather);
 
-            console.log(parseInt(minTemp - 272.15));
+           // console.log(parseInt(minTemp - 272.15));
             $('#showMinTemp').text(parseInt(minTemp - 272.15));
 
-            console.log(parseInt(maxTemp - 272.15));
+           // console.log(parseInt(maxTemp - 272.15));
             $('#showMaxTemp').text(parseInt(maxTemp - 272.15));
 
-            console.log(recomandations);
+          //  console.log(recomandations);
             $('#showAdvice').text("Advice: " + recomandations +".");
 
 

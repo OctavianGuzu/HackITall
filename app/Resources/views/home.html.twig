@@ -81,6 +81,26 @@
                     </div>
                 </form>
             </li>
+
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0 mr-lg-2">
+                    <select class="form-control" id="sel_mode">
+                        <option value="DRIVING">Driving</option>
+                        <option value="WALKING">Walking</option>
+                        <option value="BICYCLING">Bicycling</option>
+                        <option value="TRANSIT">Transit</option>
+                    </select>
+                </form>
+            </li>
+
+            {#<li class="nav-item">#}
+                {#<select class="selectpicker" data-live-search="true">#}
+                    {#<option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>#}
+                    {#<option data-tokens="mustard">Burger, Shake and a Smile</option>#}
+                    {#<option data-tokens="frosting">Sugar, Spice and all things nice</option>#}
+                {#</select>#}
+            {#</li>#}
+
             <li class="nav-item">
                 <span class="input-group-btn">
                 <button class="btn btn-primary" type="button" id="searchBtn">
@@ -181,7 +201,6 @@
                         <p id="showAdvice">""</p>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                         <button id="MessageSendBtn" type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
                     </div>
                 </div>
