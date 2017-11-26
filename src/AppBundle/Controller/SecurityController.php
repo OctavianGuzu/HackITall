@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\BrowserKit\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
@@ -28,5 +29,17 @@ class SecurityController extends Controller
             'last_username' => $lastUsername,
             'error'         => $error,
         ));
+    }
+
+
+    /**
+     * @Route("/logout", name="logout")
+     */
+    public function logoutAction(Request $request)
+    {
+        $this->get('security.token_storage')->setToken(null);
+        //$request->getSession()->invalidate();
+
+        return new Response("Iesi acas");
     }
 }

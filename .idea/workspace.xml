@@ -2,10 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6aefa79-ce3c-4e23-85b4-e7e36141bf28" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/logs/prod.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/register.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/MarkdownTransformer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/SlowGenusGenerator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/SubFamilyAssigner.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/SubFamilyGenerator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/public/home-js/logout.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/home.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/home.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/login.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/login.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/parameters.yml" afterPath="$PROJECT_DIR$/app/config/parameters.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/MainController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/MainController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/prod.log" afterPath="$PROJECT_DIR$/var/logs/prod.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/home-js/homejs.js" afterPath="$PROJECT_DIR$/web/public/home-js/homejs.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,38 +33,18 @@
       <file leaf-file-name="MainController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+            <state relative-caret-position="411">
+              <caret line="60" column="60" lean-forward="false" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/home.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1207">
-              <caret line="71" column="75" lean-forward="false" selection-start-line="71" selection-start-column="66" selection-end-line="71" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="razvan.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/public/css/razvan.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="459">
+              <caret line="46" column="7" lean-forward="false" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -60,38 +53,20 @@
       <file leaf-file-name="homejs.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/public/home-js/homejs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="41" column="66" lean-forward="false" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
-              <folding />
+            <state relative-caret-position="595">
+              <caret line="65" column="16" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+              <folding>
+                <element signature="n#!!block;n#calculateAndDisplayRoute#0;n#!!block;n#initMap#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map-styles.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/public/home-js/map-styles.js">
+      <file leaf-file-name="register.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/register.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppKernel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="21" column="58" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppCache.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/AppCache.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="275">
+              <caret line="53" column="98" lean-forward="false" selection-start-line="53" selection-start-column="98" selection-end-line="53" selection-end-column="98" />
               <folding />
             </state>
           </provider>
@@ -109,36 +84,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>welcome</find>
-      <find>ng</find>
-      <find>body</find>
-      <find>homepage</find>
-      <find>a</find>
-      <find>asseti</find>
-      <find>A</find>
-      <find>Assec</find>
-      <find>Asse</find>
-      <find>Assetic</find>
-      <find>AsseticB</find>
-      <find>AsseticBu</find>
-      <find>AsseticBun</find>
-      <find>AsseticBund</find>
-      <find>AsseticBundl</find>
-      <find>asse</find>
-      <find>AsseticBundle</find>
-      <find>assetic</find>
-      <find>asset</find>
-      <find>sb-admin</find>
-      <find>href</find>
-      <find>css</find>
-      <find>script</find>
-      <find>form</find>
-      <find>twig</find>
-      <find>http</find>
-      <find>code</find>
-      <find>anguler</find>
-      <find>root</find>
-      <find>inva</find>
+      <find>hidden</find>
+      <find>initMap</find>
+      <find>init</find>
+      <find>logout</find>
+      <find>Regis</find>
+      <find>login</find>
+      <find>reg</find>
+      <find>register</find>
+      <find>registerNewAcc</find>
+      <find>regis</find>
+      <find>homejs</find>
+      <find>salt</find>
+      <find>acti</find>
+      <find>active</find>
+      <find>security.encoder_factory</find>
+      <find>security.encoder_factoryEncoderFactory</find>
+      <find>security.encoder_factoryEncoderFactory`</find>
+      <find>e</find>
+      <find>encode</find>
+      <find>encodePas</find>
+      <find>encodePass</find>
+      <find>encodePasswatfd</find>
+      <find>encodePasswatf</find>
+      <find>encodePasswat</find>
+      <find>encodePasswa</find>
+      <find>encodePassw</find>
+      <find>encodePasswo</find>
+      <find>encodePassword</find>
+      <find>passwor</find>
+      <find>match</find>
     </findStrings>
     <dirStrings>
       <dir>C:\xampp\htdocs\KnpForms\src\AppBundle\Controller</dir>
@@ -152,7 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/SubFamilyGenerator.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/SubFamily.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/SubFamilyRepository.php" />
@@ -165,7 +139,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/admin/genus/list.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/Admin/GenusAdminController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/genus/list.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/genus/show.html.twig" />
@@ -174,7 +147,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/GenusNote.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Genus.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/GenusRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/SlowGenusGenerator.php" />
@@ -184,14 +156,21 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/GenusController.php" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/login.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/login.html" />
         <option value="$PROJECT_DIR$/app/Resources/views/home.html.twig.html" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/MainController.php" />
         <option value="$PROJECT_DIR$/web/public/home-js/map-styles.js" />
         <option value="$PROJECT_DIR$/web/public/css/razvan.css" />
+        <option value="$PROJECT_DIR$/web/public/home-js/logout.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/home.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" />
+        <option value="$PROJECT_DIR$/web/app.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/login.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/MainController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/register.html.twig" />
         <option value="$PROJECT_DIR$/web/public/home-js/homejs.js" />
       </list>
     </option>
@@ -224,27 +203,123 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackITall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackITall" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackITall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackITall" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackITall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackITall" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackITall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackITall" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackITall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackITall" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackITall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HackITall" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="V:/constantin-andreescu-dev.mktp-ro/release-7b91af902dd57153c2750c1664f0ef62055c4287_20171002110622" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="SearchEverywhereHistoryKey" value="login.htm&#9;FILE&#9;file://C:/xampp/htdocs/KnpForms/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/Functional/Bundle/CsrfFormLoginBundle/Resources/views/Login/login.html.twig&#10;App&#9;FILE&#9;file://C:/xampp/htdocs/KnpForms/app/AppKernel.php" />
+    <property name="SearchEverywhereHistoryKey" value="EncoderFactory&#9;null&#9;null&#10;param&#9;FILE&#9;file://C:/xampp/htdocs/HackItAll/HackITall/app/config/parameters.yml&#10;php.ini&#9;FILE&#9;file://C:/xampp/htdocs/HackItAll/HackITall/vendor/doctrine/cache/tests/travis/php.ini&#10;log&#9;FILE&#9;file://C:/xampp/htdocs/HackItAll/HackITall/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/Functional/Bundle/CsrfFormLoginBundle/Resources/views/Login/login.html.twig&#10;login.htm&#9;FILE&#9;file://C:/xampp/htdocs/KnpForms/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/Functional/Bundle/CsrfFormLoginBundle/Resources/views/Login/login.html.twig&#10;App&#9;FILE&#9;file://C:/xampp/htdocs/KnpForms/app/AppKernel.php" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\KnpForms\src\AppBundle\Resources" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\HackItAll\HackITall\app\Resources\views" />
+      <recent name="C:\xampp\htdocs\HackItAll\HackITall\src\AppBundle\Service" />
       <recent name="C:\xampp\htdocs\KnpForms\app\Resources\views" />
       <recent name="C:\xampp\htdocs\KnpForms\web" />
-      <recent name="C:\xampp\htdocs\KnpForms\src\AppBundle\Resources" />
-      <recent name="C:\xampp\htdocs\KnpForms\app\Resources" />
-      <recent name="C:\xampp\htdocs\KnpForms\app" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\KnpForms\src\AppBundle\Resources" />
     </key>
   </component>
@@ -370,33 +445,34 @@
       <workItem from="1511611712231" duration="729000" />
       <workItem from="1511616234224" duration="282000" />
       <workItem from="1511616752749" duration="13120000" />
-      <workItem from="1511633717197" duration="4000" />
+      <workItem from="1511633717197" duration="12221000" />
+      <workItem from="1511646124845" duration="10931000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105053000" />
+    <option name="totallyTimeSpent" value="128201000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14717224" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14910026" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -408,50 +484,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Command/GearmanCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/LoginFormType.php" />
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/MarkdownTransformer.php" />
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/SlowGenusGenerator.php" />
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/SubFamilyAssigner.php" />
-    <entry file="file://$PROJECT_DIR$/app/Resources/translations/validators.en.yml" />
-    <entry file="file://$PROJECT_DIR$/var/cache/prod/appProdUrlGenerator.php" />
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/genus/list.html.twig" />
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="7" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -489,13 +530,6 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/index.html" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/js/sb-admin/sb-admin.js" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/public/js/sb-admin/sb-admin.js" />
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/Functional/Bundle/CsrfFormLoginBundle/Resources/views/Login/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/public/js/sb-admin/sb-admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -516,7 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -544,7 +577,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GenusController.php" />
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/login.html" />
+    <entry file="file://$PROJECT_DIR$/web/public/css/razvan.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/home-js/map-styles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/home-js/logout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Tests/Functional/Bundle/CsrfFormLoginBundle/Resources/views/Login/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="40" lean-forward="false" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/MarkdownTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -552,45 +623,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GenusController.php" />
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/login.html" />
-    <entry file="file://$PROJECT_DIR$/web/public/home-js/map-styles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/css/razvan.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/home.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="75" lean-forward="false" selection-start-line="71" selection-start-column="66" selection-end-line="71" selection-end-column="75" />
+        <state relative-caret-position="12">
+          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/cache/tests/travis/php.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="61" column="45" lean-forward="false" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="30" column="11" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="30" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="46" column="7" lean-forward="false" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Encoder/EncoderFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Encoder/BCryptPasswordEncoder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/register.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="53" column="98" lean-forward="false" selection-start-line="53" selection-start-column="98" selection-end-line="53" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="60" column="60" lean-forward="false" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/home-js/homejs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="41" column="66" lean-forward="false" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
-          <folding />
+        <state relative-caret-position="595">
+          <caret line="65" column="16" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!block;n#calculateAndDisplayRoute#0;n#!!block;n#initMap#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

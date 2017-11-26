@@ -44,8 +44,10 @@
         </form>
 
         <div class="text-center">
-          <a id="registerAcc" class="d-block small mt-3" href="#">Register an Account</a>
-          <p class="text-danger" hidden>Invalid email address or password!</p>
+          <a id="registerAcc" class="d-block small mt-3" href="/register">Register an Account</a>
+          {% if error %}
+                <p class="text-danger">Invalid email address or password!</p>
+           {% endif %}
         </div>
       </div>
     </div>
@@ -59,10 +61,6 @@
 
   <script src="../public/vendor/angular/angular.min.js"></script>
   <script src="../public/vendor/angular/angular-route.js"></script>
-
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
 
 </body>
 

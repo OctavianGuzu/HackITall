@@ -20,12 +20,12 @@ class User implements UserInterface, \Serializable
     private $id;
 
     /**
-     * @ORM\Column(name="name", type="string")
+     * @ORM\Column(name="username", type="string")
      */
     private $username;
 
     /**
-     * @ORM\Column(name="pass", type="string")
+     * @ORM\Column(name="password", type="string")
      */
     private $password;
 
@@ -52,8 +52,14 @@ class User implements UserInterface, \Serializable
     public function __construct()
     {
         $this->isActive = true;
+        $this->mapSearches = [];
         // may not be needed, see section on salt below
         // $this->salt = md5(uniqid('', true));
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
     public function getUsername()
